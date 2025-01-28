@@ -5,3 +5,4 @@ public interface Person {
     public int      getAge();
     public Results  getResults(); 
 }
+
