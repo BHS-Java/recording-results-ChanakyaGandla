@@ -26,7 +26,7 @@ public class Main implements Spec{
     }
     @Override
     public void addResults(Person player){
-        player
+        player.setResults(new Test("A result...?"));
     }
 
     public Results getResults(Game g){
