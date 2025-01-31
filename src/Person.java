@@ -4,5 +4,7 @@ public interface Person {
     public int      getHeight();
     public int      getAge();
     public Results  getResults(); 
+    public void setResults(Test test);
+    public void climbStairs(int steps, String style, int size);
 }
 

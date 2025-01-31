@@ -4,6 +4,8 @@ public class Player implements Person{
     private int height = 6 + 2/12;
     private int age = 17;
     private Test mathTest = new Test("I aced it!");
+    private int pos = 0;
+
     //CONSTRUCTOR ------------------------
     public Player(String name, int height, int age){
         this.name = name;
@@ -33,7 +35,8 @@ public class Player implements Person{
     public Results getResults(){
         return this.mathTest;
     }
+    @Override
     public void setResults(Test test){
         this.mathTest = test;
-    }
+    }   
 }
