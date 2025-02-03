@@ -1,22 +1,23 @@
-
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class Main implements Spec{
     
 
     private Scanner s = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        Main I = new Main();
-        String name = I.askString("What is thyself name");
-        int height = I.askNumber("What is your height (in cm), good lad.");
-        int age = I.askNumber("How old are ye laddie");
+    public static void main(String[] args) throws FileNotFoundException {
+        //Main I = new Main();
+        //String name = I.askString("What is thyself name");
+        //int height = I.askNumber("What is your height (in cm), good lad.");
+        //int age = I.askNumber("How old are ye laddie");
 
-        Player[] p = new Player[]{
-            new Player(name, height, age)
-        };
+        //Player[] p = new Player[]{
+            //new Player(name, height, age)
+        //};
 
-        Game g = new Game(p);
+        Game g = new Game();
         g.climbStairs(5, 5, 50, 0, 1);
+        g.createPlayersFromCSV();
         System.out.println("Are we getting a reading?");
     }
 

@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 public class Game {
 
 
@@ -5,18 +8,35 @@ public class Game {
     private Test t = new Test("The game has not started yet.");
     private char[][] s;
     private Player[] p;
+    private File f = new File("C:\\Github\\recording-results-ChanakyaGandla-1\\src\\players.csv");
+
+
 
     //CONSTRUCTORS
 
     public Game(){
         
     }
+    @SuppressWarnings("OverridableMethodCallInConstructor")
     public Game(Player[] p){
-        setP(p);
+        this.p = p;
+
+        String names = "";
+        for(int i = 0; i < p.length; i++){
+            names = names + p[i].getName() + " " + p[i].getHeight();
+        }
+
+        setT(new Test(names));
+        System.out.println(getT().getResult());
+
     }
 
 
     //METHODSS
+    public Scanner getScan() throws FileNotFoundException{
+        return new Scanner(f);
+    }
+
 
     public Test getT() {
         return t;
@@ -89,12 +109,19 @@ public class Game {
         }
         printStairs();
     }
-
-    public Player getP() {
+    public Player[] createPlayersFromCSV() throws FileNotFoundException {
+        Scanner s = getScan();
+        int lines = 0;
+        while (s.hasNextLine()) {
+            lines++;
+            s.nextLine();
+        }
+        s.reset();
+        Player[] p = new Player[lines];
+        while(s.hasNextLine()){
+            
+            System.out.println(s.nextLine());
+        }
         return p;
-    }
-
-    public void setP(Player p) {
-        this.p = p;
     }
 }
