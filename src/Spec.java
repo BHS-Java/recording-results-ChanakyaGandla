@@ -5,3 +5,4 @@ public interface Spec {
     public Person   makePerson(String name);
     public void     addResults(Person player);
 }
+
