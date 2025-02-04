@@ -18,6 +18,7 @@ public class Main implements Spec{
         Game g = new Game();
         g.climbStairs(5, 5, 50, 0, 1);
         g.createPlayersFromCSV();
+        g.printAllPlayers();
         System.out.println("Are we getting a reading?");
     }
 

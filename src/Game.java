@@ -115,13 +115,24 @@ public class Game {
         while (s.hasNextLine()) {
             lines++;
             s.nextLine();
+            
         }
         s.reset();
-        Player[] p = new Player[lines];
+        Player[] j = new Player[lines];
+        int num = 0;
         while(s.hasNextLine()){
-            
-            System.out.println(s.nextLine());
+            String[] z = s.nextLine().split(" ");
+            j[num] = new Player(z[0], Integer.parseInt(z[1]), Integer.parseInt(z[2]));
+            num++;
         }
-        return p;
+        return j;
+    }
+
+    public void printAllPlayers() {
+        for(int i = 0; i < this.p.length; i++){
+            System.out.println(this.p[i].getName());
+            System.out.println(this.p[i].getAge());
+            System.out.println(this.p[i].getHeight());
+        }
     }
 }
